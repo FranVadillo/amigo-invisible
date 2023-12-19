@@ -108,15 +108,18 @@ window.onload = function() {
 
 	}
 }
-calc = function()
+function calc()
 {
 	let input = parseInt(document.getElementById("code").value);
 	result_label.style.display = "none"
 	for (let i = 0; i < codes.length; i++)
 	{
+		console.log(input + ", " + codes[i]);
 		if(input == codes[i]){
 			result_label.innerHTML = people[i] + " regala a " + people[results[i]];
 			result_label.style.display = "block"
+			console.log("codigo valido");
 		}
 	}
+	console.log("Entro");
 }

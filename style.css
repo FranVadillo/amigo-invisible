@@ -1,0 +1,24 @@
+body{
+	padding: 2% 2% 5% 2%;
+	margin: auto;
+	text-align: center;
+	background-color: rgb(210, 210, 210);
+}
+#image{
+	margin: 20px 0 20px 0;
+}
+h1{
+	margin-bottom: 30px;
+	color: rgb(50, 50, 50);
+}
+h3{
+	margin-bottom: 10px;
+}
+a{
+	color: rgb(80, 80, 80);
+	text-decoration: underline;
+}
+div{
+	margin-bottom: 30px;
+	color: rgb(50, 50, 50);
+}
