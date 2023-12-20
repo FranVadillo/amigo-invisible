@@ -124,6 +124,7 @@ function calc()
 		c[i] = very_difficult_maths(hacker[i])
 		console.log("real code " + i + " is " + c[i])
 	}
+	result_label.innerHTML = "Código no válido";
 	for (let i = 0; i < c.length; i++)
 	{
 		if(input == c[i]){
