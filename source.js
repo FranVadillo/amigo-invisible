@@ -16,7 +16,7 @@ const people = [
 	"Bruno",
 	"Modesta"
 ];
-const bans = [
+const square_root = [
 	[0, 1, 2],
 	[0, 1, 2],
 	[0, 1, 2],
@@ -34,25 +34,25 @@ const bans = [
 	[11, 12, 13, 14],
 	[4, 6]
 ];
-const codes = [
-	111,
-	222,
-	343,
-	5,
-	264,
-	5464,
-	64554,
-	423432,
-	76587,
-	65443,
-	23464,
-	4235574,
-	4564564,
-	8679678,
-	456346,
-	75678568
+const hacker = [
+	523654635566544,
+	655334656524566,
+	344554342443655,
+	332345343422343,
+	266655445465433,
+	545552236433343,
+	644455345266544,
+	452342323422233,
+	564544345365452,
+	255343434464343,
+	532524254665534,
+	426445232565456,
+	456544456465455,
+	423454356256465,
+	322232432266544,
+	645654653566444
 ];
-const results = [
+const r = [
 	-1,
 	-1,
 	-1,
@@ -85,41 +85,50 @@ window.onload = function() {
 				var n = nxt() / 100;
 				return (n - Math.floor(n))
 			}
-	for (let i = 0; i < codes.length; i++)
+	for (let i = 0; i < hacker.length; i++)
 	{
 		tries = 0
-		random_number = bans[i][0]
-		while((bans[i].includes(random_number) || results.includes(random_number)) && tries < 1000)
+		random_number = square_root[i][0]
+		while((square_root[i].includes(random_number) || r.includes(random_number)) && tries < 1000)
 		{
 			random_number = Math.floor(random() * 16);
 			tries++;
 		}
 		if(tries == 1000)
 		{
-			for (let j = 0; j < results.length; j++)
-				results[j] = -1
-			console.log("Combinación imposible, vuelvo a empezar");
+			for (let j = 0; j < r.length; j++)
+				r[j] = -1
 			i = -1;
 		}
 		else
 		{
-			results[i] = random_number;
+			r[i] = random_number;
 		}
 
 	}
+}
+function very_difficult_maths(n)
+{
+    	let o = (n + '').split('');
+    	o.splice(2, 6);
+    	o.splice(4, 4);
+    	return parseInt(o.join(''));
 }
 function calc()
 {
 	let input = parseInt(document.getElementById("code").value);
 	result_label.style.display = "none"
-	for (let i = 0; i < codes.length; i++)
+	const c = []
+	for (let i = 0; i < hacker.length; i++)
 	{
-		console.log(input + ", " + codes[i]);
-		if(input == codes[i]){
-			result_label.innerHTML = people[i] + " regala a " + people[results[i]];
+		c[i] = very_difficult_maths(hacker[i])
+		console.log("real code " + i + " is " + c[i])
+	}
+	for (let i = 0; i < c.length; i++)
+	{
+		if(input == c[i]){
+			result_label.innerHTML = people[i] + " regala a " + people[r[i]];
 			result_label.style.display = "block"
-			console.log("codigo valido");
 		}
 	}
-	console.log("Entro");
 }
