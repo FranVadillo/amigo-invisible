@@ -116,15 +116,15 @@ function very_difficult_maths(n)
 }
 function calc()
 {
+	result_label.innerHTML = "Código no válido";
+	result_label.style.display = "block"
 	let input = parseInt(document.getElementById("code").value);
 	result_label.style.display = "none"
 	const c = []
 	for (let i = 0; i < hacker.length; i++)
 	{
 		c[i] = very_difficult_maths(hacker[i])
-		console.log("real code " + i + " is " + c[i])
 	}
-	result_label.innerHTML = "Código no válido";
 	for (let i = 0; i < c.length; i++)
 	{
 		if(input == c[i]){
