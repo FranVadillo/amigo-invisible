@@ -79,7 +79,7 @@ window.onload = function() {
 	let random_number
 	let tries
 	const LCG = (s) => (_) => (s = Math.imul(48271, s) >>> 0)
-	const nxt = LCG(67575634)
+	const nxt = LCG(675756134)
 	let random = function()
 			{
 				var n = nxt() / 100;
