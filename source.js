@@ -119,7 +119,6 @@ function calc()
 	result_label.innerHTML = "Código no válido";
 	result_label.style.display = "block"
 	let input = parseInt(document.getElementById("code").value);
-	result_label.style.display = "none"
 	const c = []
 	for (let i = 0; i < hacker.length; i++)
 	{
